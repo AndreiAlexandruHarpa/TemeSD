@@ -1,0 +1,5 @@
+<StudentBean><nume>Popescu</nume><prenume>Ion</prenume><telefon>0756234123</telefon><email>popescu_ion@gmail.com</email><varsta>43</varsta></StudentBean>
+<StudentBean><nume>Dandu</nume><prenume>Damian</prenume><telefon>0723419335</telefon><email>dandu_damian@gmail.com</email><varsta>22</varsta></StudentBean>
+<StudentBean><nume>Popescu</nume><prenume>Maria</prenume><telefon>0752948812</telefon><email>popescu_maria@gmail.com</email><varsta>23</varsta></StudentBean>
+<StudentBean><nume>Racheta</nume><prenume>Mircea</prenume><telefon>074528341</telefon><email>racheta_mircea@gmail.com</email><varsta>65</varsta></StudentBean>
+<StudentBean><nume>Giangu</nume><prenume>Marian</prenume><telefon>0739283128</telefon><email>giangu_marian@gmail.com</email><varsta>32</varsta></StudentBean>

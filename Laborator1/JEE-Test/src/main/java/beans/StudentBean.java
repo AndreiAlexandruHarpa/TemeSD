@@ -1,0 +1,44 @@
+package beans;
+
+public class StudentBean implements java.io.Serializable {
+    private String nume = null;
+    private String prenume = null;
+    private String telefon = null;
+    private String email = null;
+    private int varsta = 0;
+
+    public StudentBean() {
+    }
+
+    public String getNume() {
+        return nume;
+    }
+
+    public void setNume(String nume) {
+        this.nume = nume;
+    }
+
+    public String getPrenume() {
+        return prenume;
+    }
+
+    public void setPrenume(String prenume) {
+        this.prenume = prenume;
+    }
+
+    public int getVarsta() {
+        return varsta;
+    }
+
+    public void setVarsta(int varsta) {
+        this.varsta = varsta;
+    }
+
+    public String getTelefon() { return telefon; }
+
+    public void setTelefon(String telefon) { this.telefon = telefon; }
+
+    public String getEmail() { return email; }
+
+    public void setEmail(String email) { this.email = email; }
+}
