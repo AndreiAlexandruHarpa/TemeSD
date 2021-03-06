@@ -1,0 +1,9 @@
+/home/andy/SD/LAB2/JEE-App/servlets/servlet/src/main/java/Student/DeleteStudentServlet.java
+/home/andy/SD/LAB2/JEE-App/servlets/servlet/src/main/java/Curs/DeleteCourseServlet.java
+/home/andy/SD/LAB2/JEE-App/servlets/servlet/src/main/java/Student/UpdateStudentServlet.java
+/home/andy/SD/LAB2/JEE-App/servlets/servlet/src/main/java/Curs/UpdateCourseServlet.java
+/home/andy/SD/LAB2/JEE-App/servlets/servlet/src/main/java/Student/ProcessStudentServlet.java
+/home/andy/SD/LAB2/JEE-App/servlets/servlet/src/main/java/Curs/FetchCourseListServlet.java
+/home/andy/SD/LAB2/JEE-App/servlets/servlet/src/main/java/ProcessBankOperationServlet.java
+/home/andy/SD/LAB2/JEE-App/servlets/servlet/src/main/java/Curs/ProcessCourseServlet.java
+/home/andy/SD/LAB2/JEE-App/servlets/servlet/src/main/java/Student/FetchStudentListServlet.java
