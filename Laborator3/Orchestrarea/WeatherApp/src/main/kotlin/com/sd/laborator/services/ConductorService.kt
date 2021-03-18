@@ -4,7 +4,9 @@ import com.sd.laborator.interfaces.LocationSearchInterface
 import com.sd.laborator.interfaces.TimeInterface
 import com.sd.laborator.interfaces.WeatherForecastInterface
 import com.sd.laborator.pojo.WeatherForecastData
+import org.springframework.stereotype.Service
 
+@Service
 class ConductorService(
     private val locationSearchService: LocationSearchInterface,
     private val timeService: TimeInterface,

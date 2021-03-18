@@ -22,10 +22,13 @@ class WeatherAppController {
     @Autowired
     private lateinit var timeService: TimeInterface
 
+    @Autowired
+    private lateinit var conductorService: ConductorService
+
     @RequestMapping("/getforecast/{location}", method = [RequestMethod.GET])
     @ResponseBody
     fun getForecast(@PathVariable location: String): String {
-        val conductorService = ConductorService(locationSearchService,
+        conductorService = ConductorService(locationSearchService,
             timeService, weatherForecastService)
 
         return conductorService.getResponse(location
