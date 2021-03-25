@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<style>
+
+    body, html {
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    .content {
+        margin: 0 auto;
+        width: 400px;
+    }
+
+    table, td, th {
+        border: 1px solid #aaa;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th {
+        height: 30px;
+    }
+
+    td {
+        text-align: center;
+        padding: 5px;
+    }
+
+    .form {
+        margin-top: 20px;
+    }
+
+    #content {
+        width: 70%;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Update Expense</h1>
+
+    <div class="form">
+        <form action="/update/{{ expense.id }}" method="post">
+            Description: <input type="text" name="description" id="description" value="{{ expense.description }}"/><br/>
+            Amount: <input type="number" name="amount" id="amount" value="{{ expense.amount }}"/><br/>
+            <input type="submit" value="Update expense"/>
+        </form>
+        <a href="/">Home</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html lang="ro">
+<head>
+    <title>Formular creare persoana</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script>
+        function stergePersoana() {
+            var xhttp = new XMLHttpRequest();
+            var id = document.getElementById("id2");
+            var url = "http://localhost:8080/person/" + id.value;
+            xhttp.open("DELETE", url, true);
+
+            xhttp.onreadystatechange = function () {
+                if(this.readyState == 4 && this.status == 200) {
+                    console.log(xhttp.responseText);
+                } else {
+
+                }
+            };
+
+            var data = JSON.stringify({"id" : id.value});
+            xhttp.send(data)
+        }
+
+        function afisareUrl() {
+            var action = "/person/" + document.getElementById("id3").value;
+            var afisare_form = document.getElementById("afisare_form");
+            afisare_form.action = action;
+        }
+
+        function getInfo() {
+            var xhttp = new XMLHttpRequest();
+            var id = document.getElementById("id4");
+            var url = "http://localhost:8080/person/" + id.value;
+            xhttp.open("GET", url, true);
+            xhttp.send(null);
+            xhttp.onreadystatechange = function () {
+                if(this.readyState == 4 && this.status == 200) {
+                    console.log("Success");
+                    var receivedData = xhttp.responseText;
+                    var obj = JSON.parse(receivedData);
+                    id.innerHTML = obj.id;
+                    document.getElementById("firstName2").innerHTML = obj.firstName;
+                    console.log(obj.firstName);
+                    document.getElementById("lastName2").innerHTML = obj.lastName;
+                    document.getElementById("telephoneNumber2").innerHTML = obj.telephoneNumber;
+                } else {
+                    console.log("Error");
+                }
+            };
+
+        }
+
+        function updatePerson() {
+            var xhttp = new XMLHttpRequest();
+            var id = document.getElementById("id4");
+            var firstName = document.getElementById("firstName2");
+            var lastName = document.getElementById("lastName2");
+            var telephoneNumber = document.getElementById("telephoneNumber2");
+            var url = "http://localhost:8080/person/" + id.value;
+            xhttp.open("PUT", url, true);
+
+            xhttp.onreadystatechange = function () {
+                if(this.readyState == 4 && this.status == 202) {
+                    console.log("Success");
+                } else {
+                    console.log("Error");
+                }
+            };
+
+            var data = JSON.stringify({"firstName" : firstName.value,
+                                        "lastName" : lastName.value, "telephoneNumber" : telephoneNumber.value});
+            xhttp.send(data);
+        }
+    </script>
+</head>
+<body>
+    <h2>Creare Persoana</h2><br/>
+    <form action="/person" method="post">
+        ID: <input type="number" name="id" id="id" /><br/>
+        First Name: <input type="text" name="firstName" id="firstName"/><br/>
+        Last Name: <input type="text" name="lastName" id="lastName"/><br/>
+        Telephone: <input type="text" name="telephoneNumber" id="telephoneNumber"/><br/>
+        <br />
+        <br />
+        <button type="submit" name="submit" id="submit">Trimite</button>
+    </form>
+
+    <br/><br/><br/>
+    <h2>Afisare Persoana</h2><br/>
+    <form id="afisare_form" onsubmit="afisareUrl()" method="get">
+        ID: <input type="number" name="id" id="id3" /><br/>
+        <button type="submit" name="submit" id="submit2">Afisare</button>
+    </form>
+
+    <br/><br/><br/>
+    <h2>Stergere Persoana</h2>
+    <br/>
+    ID: <input type="number" id="id2"/><br/>
+    <button onclick="stergePersoana()">Sterge</button>
+
+    <br/><br/><br/>
+    <h2>Actualizare Persoana</h2>
+    <br/>
+    ID: <input type="number" name="id" id="id4" /><br/>
+    First Name: <input type="text" name="firstName" id="firstName2"/><br/>
+    Last Name: <input type="text" name="lastName" id="lastName2"/><br/>
+    Telephone: <input type="text" name="telephoneNumber" id="telephoneNumber2"/><br/>
+    <br />
+    <br />
+    <button onclick="getInfo()">Get Person data</button>
+    <button onclick="updatePerson()">Actualizare</button>
+</body>
+</html>
